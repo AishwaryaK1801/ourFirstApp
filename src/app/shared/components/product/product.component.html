@@ -1,0 +1,47 @@
+
+
+
+
+<p 
+[ngStyle]="{
+backgroundColor :getBgColor()
+}"
+[class.P-4]="isProductAvailable"
+[ngClass]="{
+   'text-white':isProductAvailable,
+   'text-danger':!isProductAvailable,
+   
+   'p-2':!isProductAvailable
+}">
+
+    the product name is 
+    <strong>
+        {{productName}}
+    </strong>
+    and its 
+    id is 
+    <strong>
+        {{productId}}
+    </strong>
+    and the product is 
+    <strong *ngIf="isProductAvailable; else noProd">
+        <!-- {{productStatus}} -->
+        Available !
+    </strong>
+    <ng-template #noProd>
+        <strong>Not Available !</strong>
+    </ng-template>
+
+</p>
+<!-- <input type="text" [value]="productName" class="form-control" > -->
+<!-- <input type="text" [value]="'mobile'" class="form-control" > -->
+
+<!-- <input
+(keyup)="onKeyUp($event)" 
+type="text"
+class="form-control"> -->
+
+
+<!-- <div [innerHTML]="infoHtml">
+
+</div> -->

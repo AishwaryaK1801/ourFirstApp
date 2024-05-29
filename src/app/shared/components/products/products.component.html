@@ -1,0 +1,86 @@
+<!-- #productName is element reference
+    to create element reference we need to add # before it
+element reference can store the reference of html element
+it is html element as well as doc obj at the same time
+we can use this element reference anywhere in template-->
+
+<!-- for using ngModel two way data binding ([(ngModel)])below,
+     we have imported FormsModule in app.module.ts file-->
+<input type="text"
+[(ngModel)] = "getProductName" 
+#productName
+ class="form-control mb-4">
+
+<!-- here we are sending element reference as a argument -->
+<!-- <button
+(click)="onProductAdd(productName)" class="btn btn-primary" 
+[disabled]="isDisabled">Add Products</button> -->
+
+<!-- now we do not want to send element reference as a argument -->
+<!-- here we are sending element reference as a argument -->
+<button
+(click)="onProductAdd()" class="btn btn-primary" 
+[disabled]="productCount >=10">Add Products
+</button>
+
+
+
+<button
+(click)="onProductRemove()" 
+class="btn btn-primary ml-4" 
+[disabled]="productCount == 0">
+Remove Products
+</button>
+<!-- [disabled]="productCount == 0">
+but here any developer can make changes (can remove desabled) 
+hence we need to do it in functionality ( ie in ts) also 
+we dont want to remove products wehen there are no products  -->
+
+
+<br>
+<br>
+<p class="alert alert-warning" *ngIf="productCount >=10">
+    You can add max of 10 products only
+</p>
+
+
+<!-- in angular we can bind event directle on element of html(as html is dynamic)
+     as click event is bindend in above example-->
+
+<!-- we are using property binding in line no 28 -->
+
+<!-- here 2 way data binding is hapenning 
+now we can even use angular's two way data binding-->
+<p class="alert alert-info" *ngIf="getProductName ; else noProduct">
+    {{getProductName}}  Product is added successfully !!
+  </p>
+  
+<p class="alert alert-info" *ngIf="productCount">
+  {{productCount}}  Product is added successfully !!
+</p>
+
+
+  <!-- here noProduct is template reference. 
+    as it is applied on template in below code.
+     we can aslo call it as element reference 
+-->
+<ng-template #noProduct> 
+    <p class="alert alert-info" *ngIf="!getProductName">
+        No  Product is added yet !!
+    </p>
+</ng-template>
+
+
+
+  <!-- or -->
+
+<!-- <p class="alert alert-info" *ngIf="!getProductName" >
+    No  Product is added yet !!
+  </p> -->
+
+<app-product></app-product>
+<app-product></app-product>
+
+
+
+<!-- ngIf is structural directive -->

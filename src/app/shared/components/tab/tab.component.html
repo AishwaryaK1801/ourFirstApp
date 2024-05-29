@@ -1,0 +1,86 @@
+<ul class="nav nav-pills mb-3">
+    <li class="nav-item">
+        <a href="javacript:;" class="nav-link"
+        (click)="onTabClick('Angular')"
+
+        [ngClass]="{
+            active : selectedFramewok === 'Angular'
+        }">
+            Angular
+        </a>
+    </li>
+    <li class="nav-item">
+        <a href="javacript:;" class="nav-link"
+        (click)="onTabClick('NodeJs')"
+
+        [ngClass]="{
+            active : selectedFramewok === 'NodeJs'
+        }">
+            NodeJs
+        </a>
+    </li>
+    <li class="nav-item">
+        <a href="javacript:;" class="nav-link"
+        (click)="onTabClick('RxJs')"
+        [ngClass]="{
+            active : selectedFramewok === 'RxJs'
+        }">
+            RxJs
+        </a>
+    </li>
+    <li class="nav-item">
+        <a href="javacript:;" class="nav-link"
+        (click)="onTabClick('Bootstrap')"
+
+        [ngClass]="{
+            active : selectedFramewok === 'Bootstrap'
+        }">
+            Bootstrap
+        </a>
+    </li>
+    <li class="nav-item">
+        <a href="javacript:;" class="nav-link"
+        (click)="onTabClick('Angular material')"
+
+        [ngClass]="{
+            active : selectedFramewok === 'Angular material'
+        }">
+            Angular material
+        </a>
+    </li>
+</ul>
+
+
+<div class="tab-body">
+    <div class="card" *ngIf="selectedFramewok ==='Angular'">
+        <div class="card-body">
+            <strong>Angular</strong>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus beatae enim, aut cupiditate ea, doloremque accusamus ratione quae libero, voluptatum dolores quod at in alias. Vero cumque voluptatum tempora consequuntur.
+        </div>
+    </div>
+    <div class="card" *ngIf="selectedFramewok ==='NodeJs'">
+        <div class="card-body">
+            <strong>NodeJs</strong>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus beatae enim, aut cupiditate ea, doloremque accusamus ratione quae libero, voluptatum dolores quod at in alias. Vero cumque voluptatum tempora consequuntur.
+        </div>
+    </div>
+    <div class="card" *ngIf="selectedFramewok ==='RxJs'">
+        <div class="card-body">
+            <strong>RxJs</strong>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus beatae enim, aut cupiditate ea, doloremque accusamus ratione quae libero, voluptatum dolores quod at in alias. Vero cumque voluptatum tempora consequuntur.
+        </div>
+    </div>
+    <div class="card" *ngIf="selectedFramewok ==='Bootstrap'">
+        <div class="card-body">
+            <strong>Bootstrap</strong>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus beatae enim, aut cupiditate ea, doloremque accusamus ratione quae libero, voluptatum dolores quod at in alias. Vero cumque voluptatum tempora consequuntur.
+        </div>
+    </div>
+    <div class="card" *ngIf="selectedFramewok ==='Angular material'">
+        <div class="card-body">
+            <strong>Angular material</strong>
+
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus beatae enim, aut cupiditate ea, doloremque accusamus ratione quae libero, voluptatum dolores quod at in alias. Vero cumque voluptatum tempora consequuntur.
+        </div>
+    </div>
+</div>
